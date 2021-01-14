@@ -13,13 +13,14 @@ const EntryPage = () => {
 
   const handleChange = useCallback(
     (name) => (e) => setValues({ ...values, [name]: e.target.value }),
-    []
+    [values]
   );
 
   const handleStart = useCallback(() => {
-    setRound(values.round);
+    setRound(parseInt(values.round));
     setPage(GAME_PAGE);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values]);
 
   return (
     <div class={cx('entry-page')}>

@@ -1,4 +1,3 @@
-import EntryPage from 'components/EntryPage';
 import React, { useState, createContext } from 'react';
 
 // Constants for navigation

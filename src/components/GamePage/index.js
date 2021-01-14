@@ -43,9 +43,10 @@ const GamePage = () => {
 
   useEffect(() => {
     if (gameEnd) {
-      setResult(score);
+      setResult({ ...score, round: score.round - 1 });
       setPage(RESULT_PAGE);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myChoice]);
 
   // Computer select when user chose one
@@ -87,6 +88,7 @@ const GamePage = () => {
       } else {
       }
     }, changeDelay);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myChoice]);
 
   return (
@@ -100,21 +102,21 @@ const GamePage = () => {
       <div className={cx('game-section', { selected: myChoice !== NONE })}>
         <div>
           <FontAwesomeIcon
-            className={cx('icon', { 'me-choice': myChoice == ROCK })}
+            className={cx('icon', { 'me-choice': myChoice === ROCK })}
             icon={faHandRock}
             onClick={handleSelect(ROCK)}
           />
         </div>
         <div>
           <FontAwesomeIcon
-            className={cx('icon', { 'me-choice': myChoice == PAPER })}
+            className={cx('icon', { 'me-choice': myChoice === PAPER })}
             icon={faHandPaper}
             onClick={handleSelect(PAPER)}
           />
         </div>
         <div>
           <FontAwesomeIcon
-            className={cx('icon', { 'me-choice': myChoice == SCISSORS })}
+            className={cx('icon', { 'me-choice': myChoice === SCISSORS })}
             icon={faHandScissors}
             onClick={handleSelect(SCISSORS)}
           />

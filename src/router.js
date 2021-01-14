@@ -21,9 +21,9 @@ function Router() {
       return <GamePage />;
     case RESULT_PAGE:
       return <ResultPage />;
+    default:
+      return <div>ERROR</div>;
   }
-
-  return <div>ERROR</div>;
 }
 
 export default Router;
