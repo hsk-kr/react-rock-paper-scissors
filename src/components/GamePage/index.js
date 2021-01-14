@@ -15,10 +15,10 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import { GameContext, RESULT_PAGE } from 'contexts/GameContext';
 
-const NONE = 0;
-const ROCK = 1;
-const PAPER = 2;
-const SCISSORS = 3;
+const NONE = -1;
+const ROCK = 0;
+const PAPER = 1;
+const SCISSORS = 2;
 
 const cx = classNames.bind(styles);
 
@@ -55,7 +55,7 @@ const GamePage = () => {
 
     const icons = document.getElementsByClassName(cx('icon'));
     let numOfChange = parseInt(Math.random() * 10) + 5;
-    let com = parseInt(Math.random() * 3) + 1;
+    let com = parseInt(Math.random() * 3);
     let changeDelay = parseInt(Math.random() * 500) + 100;
 
     const itvComputerChoosing = setInterval(() => {
@@ -63,7 +63,7 @@ const GamePage = () => {
       numOfChange--;
       icons[numOfChange % 3].parentNode.style.border = '2px solid red';
 
-      if (numOfChange === 1) {
+      if (numOfChange === com) {
         // Result
         score.round++;
 
