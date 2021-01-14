@@ -1,0 +1,48 @@
+.game-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin-top: 24px;
+    font-size: 4em;
+  }
+
+  .score-section {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    > span {
+      font-size: 1.5em;
+    }
+
+    > span:nth-child(2) {
+      color: red;
+    }
+  }
+
+  .game-section {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+
+    &:not(.selected) {
+      .icon {
+        &:hover {
+          border: 2px blue solid;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .icon {
+      font-size: 7em;
+
+      &.me-choice {
+        border: 2px blue solid;
+      }
+    }
+  }
+}

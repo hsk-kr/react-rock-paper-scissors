@@ -7,9 +7,9 @@ import {
 } from 'contexts/GameContext';
 
 // Pages
-import EntryPage from 'pages/EntryPage';
-import GamePage from 'pages/GamePage';
-import ResultPage from 'pages/ResultPage';
+import EntryPage from 'components/EntryPage';
+import GamePage from 'components/GamePage';
+import ResultPage from 'components/ResultPage';
 
 function Router() {
   const { page } = useContext(GameContext);

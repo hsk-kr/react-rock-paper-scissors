@@ -1,4 +1,4 @@
-import EntryPage from 'pages/EntryPage';
+import EntryPage from 'components/EntryPage';
 import React, { useState, createContext } from 'react';
 
 // Constants for navigation
@@ -11,12 +11,19 @@ const GameContext = createContext({});
 const GameContextProvider = ({ children }) => {
   const [page, setPage] = useState(ENTRY_PAGE);
   const [round, setRound] = useState(0);
+  const [result, setResult] = useState({
+    round: 0,
+    me: 0,
+    com: 0,
+  });
 
   const value = {
     round,
     setRound,
     page,
     setPage,
+    result,
+    setResult,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
